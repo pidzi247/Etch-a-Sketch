@@ -8,9 +8,10 @@ body {
   width: 500px;
   height: 500px;
   margin: 0 auto;
-  border: 1px solid lightblue;
+  border: 3px solid lightblue;
   box-shadow: 5px 5px lightblue;
   position: relative;
   top: 25%;
   display: flex;
+  flex-wrap: wrap;
 }
