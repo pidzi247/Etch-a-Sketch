@@ -10,7 +10,12 @@
 </head>
 <body>
 
-  <button class="reset">Reset</button>
+  <button class="reset">CLEAR</button>
+  <button class="black">BLACK</button>
+  <div class="slidecontainer">
+    <input type="range" min="16" max="100" value="16" id="myRange" class="slider" oninput="this.nextElementSibling.value = this.value">
+    <output class="grid-size">16</output>
+  </div>
   <div id="container">
 
   </div>
