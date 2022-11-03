@@ -1,42 +1,38 @@
+const defaultSize = 16;
+
 const container = document.getElementById("container");
+const black = document.getElementById('black');
+const randomColor = document.getElementById('random');
 let slider = document.getElementById('myRange');
 let reset = document.querySelector('.reset');
 
-slider.addEventListener("change", () => {
 
-  let rows = slider.value;
+function createGrid(size) {
 
-  container.innerHTML ="";
-  
   //Variables that governs squares width and height based on how many rows 
   //and columns there are
-  let squareWidth = container.clientWidth/rows;
-  let squareHeight = container.clientHeight/rows;
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   
   //Loop that creates the desired grid
-  for (let j = 0; j < rows*rows; j++) {
+  for (let i = 0; i < size*size; i++) {
     const newDiv = document.createElement("div");
-    newDiv.style.height = `${squareHeight}px`;
-    newDiv.style.width = `${squareWidth}px`;
     newDiv.classList.add('square');
+    newDiv.addEventListener('mouseover', color);
     container.appendChild(newDiv);
   }
 
-  let squares = document.querySelectorAll('.square');
+}
 
-  squares.forEach(square => {
-    square.addEventListener("mouseover", () => {
-      square.classList.add('hover-square');
-    });
-  });
+function color(event) {
+  event.target.style.background = "black";
+}
 
-  reset.addEventListener("click", () => {
-    squares.forEach(square => {
-      square.classList.remove('hover-square');
-    });
-  });
+black.onclick = () => { black.classList.add('active')};
 
-});
+window.onload = createGrid(defaultSize);
+
+console.log(black);
 
 
 

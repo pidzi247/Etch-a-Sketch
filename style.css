@@ -10,16 +10,28 @@ body {
 }
 
 #container {
-  width: 500px;
-  height: 500px;
+  width: 650px;
+  height: 650px;
   margin: 0 auto;
   border: 3px solid lightblue;
   box-shadow: 5px 5px lightblue;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
 }
 
 .hover-square {
   background: black;
   transition: background 0.2s ease-in-out;
 }
+
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button.active {
+  background-color: green;
+
+}
+
