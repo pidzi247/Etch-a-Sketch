@@ -1,18 +1,20 @@
 //Variables to initiate default size of grid and color of grid squares
 const defaultSize = 16;
-const defaultColor = 'black';
+const defaultColor = '#000000';
+const defaultButton = 'black';
 
 let activeColor = defaultColor;
+let activeButton = defaultButton;
 let gridSize = defaultSize;
 
 
 //Variables that hold access to DOM elements
 const container = document.getElementById("container");
-const black = document.getElementById('black');
+const colorPalette = document.getElementById('color-pallete');
 const random = document.getElementById('random');
 const reset = document.getElementById('reset');
 const eraser = document.getElementById('eraser');
-
+const colorWheel = document.getElementById('color-wheel');
 let slider = document.getElementById('myRange');
 
 
@@ -30,38 +32,45 @@ function createGrid(size) {
     newDiv.classList.add('square');
     newDiv.addEventListener('mouseover', color);
     container.appendChild(newDiv);
+    
   }
 
 }
 
-function color(event) {
-  if(activeColor === 'black') {
-    event.target.style.background = "black";
-  } else if(activeColor === 'random') {
-    event.target.style.background = randomColor();
-  } else if(activeColor === 'white'){
-    event.target.style.background = 'white';
+function setColor(newColor) {
+  activeColor = newColor;
+}
+
+function changeButton(newButton) {
+  activateButton(newButton);
+  activeButton = newButton;
+}
+
+function color(e) {
+  if(activeButton === 'colorWheel') {
+    e.target.style.background = activeColor;
+  } else if(activeButton === 'random') {
+    e.target.style.background = randomColor();
+  } else if(activeButton === 'eraser'){
+    e.target.style.background = 'white';
   }
 }
 
-function activateButton(color) {
-  switch(color) {
-    case 'black':
-      activeColor = 'black';
+function activateButton(btn) {
+  switch(btn) {
+    case 'colorWheel':
       random.classList.remove('active');
       eraser.classList.remove('active');
-      black.classList.add('active');
+      colorPalette.classList.add('active');
       break;
-    case 'green':
-      activeColor = 'random';
-      black.classList.remove('active');
+    case 'random':
       eraser.classList.remove('active');
+      colorPalette.classList.remove('active');
       random.classList.add('active');
       break;
-    case 'white':
-      activeColor = 'white';
+    case 'eraser':
       random.classList.remove('active');
-      black.classList.remove('active');
+      colorPalette.classList.remove('active');
       eraser.classList.add('active');
       break;
   }
@@ -76,9 +85,10 @@ function randomColor() {
 }
 
 
-black.onclick = () => activateButton('black');
-random.onclick = () => activateButton('green');
-eraser.onclick = () => activateButton('white');
+colorWheel.oninput = (e) => setColor(e.target.value);
+colorPalette.onclick = () => changeButton('colorWheel');
+random.onclick = () => changeButton('random');
+eraser.onclick = () => changeButton('eraser');
 reset.onclick = () => { container.innerHTML = ''; createGrid(gridSize)};
 
 
@@ -86,6 +96,6 @@ window.onload = createGrid(defaultSize);
 
 
 
-
+console.log(activeColor);
 
 
