@@ -90,7 +90,7 @@ function randomColor() {
   return rgbColor;
 }
 
-gridValue.onmousemove = (e) => {gridValue.textContent = `${e.target.value} + ${e.target.value}`;};
+gridValue.onmousemove = (e) => {gridValue.innerHTML = `${e.target.value} + ${e.target.value}`;};
 slider.onchange = (e) => {gridSize = e.target.value; container.innerHTML = ""; createGrid(e.target.value);}
 colorWheel.oninput = (e) => setColor(e.target.value);
 colorPalette.onclick = () => changeButton('colorWheel');
