@@ -16,6 +16,12 @@ const reset = document.getElementById('reset');
 const eraser = document.getElementById('eraser');
 const colorWheel = document.getElementById('color-wheel');
 let slider = document.getElementById('myRange');
+let gridValue = document.getElementById('grid-size');
+
+let toggle = false;
+document.body.addEventListener('mousedown', () => toggle = true)
+document.body.addEventListener('mouseup', () => toggle = false)
+
 
 
 //Function that creates default basic grid on start up
@@ -32,7 +38,6 @@ function createGrid(size) {
     newDiv.classList.add('square');
     newDiv.addEventListener('mouseover', color);
     container.appendChild(newDiv);
-    
   }
 
 }
@@ -47,6 +52,7 @@ function changeButton(newButton) {
 }
 
 function color(e) {
+  if(!toggle) return;
   if(activeButton === 'colorWheel') {
     e.target.style.background = activeColor;
   } else if(activeButton === 'random') {
@@ -84,7 +90,8 @@ function randomColor() {
   return rgbColor;
 }
 
-
+gridValue.onmousemove = (e) => {gridValue.textContent = `${e.target.value} + ${e.target.value}`;};
+slider.onchange = (e) => {gridSize = e.target.value; container.innerHTML = ""; createGrid(e.target.value);}
 colorWheel.oninput = (e) => setColor(e.target.value);
 colorPalette.onclick = () => changeButton('colorWheel');
 random.onclick = () => changeButton('random');

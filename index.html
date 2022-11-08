@@ -10,14 +10,14 @@
 </head>
 <body>
   <input type="color" class="color-pallete" id="color-wheel" value="#000000">
-  <button id="color-pallete">BLACK</button>
+  <button id="color-pallete">COLOR</button>
   <button id="random">RANDOM</button>
   <button id="eraser">ERASER</button>
   <button id="reset">CLEAR</button>
   <div class="slidecontainer">
     <label for="myRange">Grid Size</label>
     <input type="range" min="16" max="100" value="16" id="myRange" class="slider" oninput="this.nextElementSibling.value = this.value">
-    <output class="grid-size">16</output>
+    <output id="grid-size">16</output>
   </div>
   <div id="container">
 
