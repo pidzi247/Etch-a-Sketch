@@ -9,31 +9,29 @@
   <title>Etch-a-Sketch</title>
 </head>
 <body>
-
-  <input type="color" class="color-pallete" id="color-wheel" value="#000000">
-  <button id="color-pallete">COLOR</button>
-  <button id="random">RANDOM</button>
-  <button id="eraser">ERASER</button>
-  <button id="reset">CLEAR</button>
-
-  <div class="slidecontainer">
-    <label for="myRange">Grid Size</label>
-    <input type="range" min="16" max="100" value="16" id="myRange" class="slider" oninput="this.nextElementSibling.value = this.value">
-    <output id="grid-size">16</output>
-  </div>
-
+  
   <div class="board">
     <div class="title">Etch a Sketch</div>
     <div class="main-frame">
-      <div class="options-area"></div>
+      <div class="options-area">
+        <input type="color" class="color-pallete" id="color-wheel" value="#000000">
+        <button id="color-pallete">COLOR</button>
+        <button id="random">RANDOM</button>
+        <button id="eraser">ERASER</button>
+        <button id="reset">CLEAR</button>
+      </div>
       <div class="sketch-area"></div>
     </div>
-      <div class="knobs">
-        <img src="./images/button.png" alt="black knob image">
-        <img src="./images/button.png" alt="black knob image">
+    <div class="knobs">
+      <img src="./images/button.png" alt="black knob image">
+      <div class="slidecontainer">
+        <label for="myRange">Grid Size</label>
+        <input type="range" min="16" max="100" value="16" id="myRange" class="slider" oninput="this.nextElementSibling.value = this.value">
+        <output id="grid-size">16</output>
       </div>
+      <img src="./images/button.png" alt="black knob image">
+    </div>
   </div>
-
 
 </body>
 </html>
