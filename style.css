@@ -2,20 +2,50 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
 }
 
-#container {
-  width: 650px;
-  height: 650px;
+.knobs {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  margin: 0 50px;
+}
+
+.board {
+  width: 1000px;
+  height: 800px;
+  background-color: #9D2E23;
+  border-radius: 50px;
   margin: 0 auto;
-  border: 3px solid lightblue;
-  box-shadow: 5px 5px lightblue;
+  box-shadow: inset -5px -5px 5px 0 lightcoral, inset 7px 4px 8px 4px black;
+}
+
+.main-frame {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  border-radius: 20px;
+  background-color: gray;
+  margin: 40px auto 0;
+  box-shadow: inset 7px 4px 10px 8px rgba(0, 0, 0, 0.7), inset -7px -4px 8px 4px rgba(0, 0, 0, 0.7);
+}
+
+.options-area {
+  width: 40%;
+  height: 100%;
+}
+
+.sketch-area {
+  width: 55%;
+  height: 98%;
+  margin: 0 auto;
+  border: 6px double black;
   display: grid;
+  border-radius: 20px;
 }
 
 .hover-square {

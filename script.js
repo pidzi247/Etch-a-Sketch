@@ -9,7 +9,7 @@ let gridSize = defaultSize;
 
 
 //Variables that hold access to DOM elements
-const container = document.getElementById("container");
+const container = document.querySelector(".sketch-area");
 const colorPalette = document.getElementById('color-pallete');
 const random = document.getElementById('random');
 const reset = document.getElementById('reset');
@@ -90,7 +90,6 @@ function randomColor() {
   return rgbColor;
 }
 
-gridValue.onmousemove = (e) => {gridValue.innerHTML = `${e.target.value} + ${e.target.value}`;};
 slider.onchange = (e) => {gridSize = e.target.value; container.innerHTML = ""; createGrid(e.target.value);}
 colorWheel.oninput = (e) => setColor(e.target.value);
 colorPalette.onclick = () => changeButton('colorWheel');
@@ -103,6 +102,5 @@ window.onload = createGrid(defaultSize);
 
 
 
-console.log(activeColor);
 
 
