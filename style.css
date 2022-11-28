@@ -2,6 +2,22 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Tangerine', serif;
+}
+
+.title {
+  align-self: center;
+  margin-top: 30px;
+  font-size: 50px;
+  font-weight: 900;
+  background: rgb(197,203,23);
+  background-image: radial-gradient(circle, rgba(197,203,23,1) 33%, rgba(65,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
 }
 
 .knobs {
@@ -22,6 +38,8 @@ img {
   border-radius: 50px;
   margin: 0 auto;
   box-shadow: inset -5px -5px 5px 0 lightcoral, inset 7px 4px 8px 4px black;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-frame {
