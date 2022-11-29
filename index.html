@@ -16,16 +16,22 @@
     <div class="main-frame">
       <div class="options-area">
         <input type="color" class="color-pallete" id="color-wheel" value="#000000">
-        <button id="color-pallete">COLOR</button>
-        <button id="random">RANDOM</button>
-        <button id="eraser">ERASER</button>
-        <button id="reset">CLEAR</button>
+        <div class="option-buttons">
+          <button id="color-pallete"></button>
+          <p>COLOR</p>
+          <button id="random"></button>
+          <p>RANDOM</p>
+          <button id="eraser"></button>
+          <p>ERASER</p>
+          <button id="reset"></button>
+          <p>CLEAR</p>
+        </div>
       </div>
       <div class="sketch-area"></div>
     </div>
     <div class="knobs">
       <img src="./images/button.png" alt="black knob image">
-      <div class="slidecontainer">
+      <div class="slide-container">
         <label for="myRange">Grid Size</label>
         <input type="range" min="16" max="100" value="16" id="myRange" class="slider" oninput="this.nextElementSibling.value = this.value">
         <output id="grid-size">16</output>
