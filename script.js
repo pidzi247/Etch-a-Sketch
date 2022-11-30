@@ -79,6 +79,11 @@ function activateButton(btn) {
       colorPalette.classList.remove('active');
       eraser.classList.add('active');
       break;
+    default:
+      random.classList.remove('active');
+      colorPalette.classList.remove('active');
+      eraser.classList.remove('active');
+      break;
   }
 }
 
@@ -95,7 +100,7 @@ colorWheel.oninput = (e) => setColor(e.target.value);
 colorPalette.onclick = () => changeButton('colorWheel');
 random.onclick = () => changeButton('random');
 eraser.onclick = () => changeButton('eraser');
-reset.onclick = () => { container.innerHTML = ''; createGrid(gridSize)};
+reset.onclick = () => { container.innerHTML = ''; changeButton('reset'); createGrid(gridSize)};
 
 
 window.onload = createGrid(defaultSize);

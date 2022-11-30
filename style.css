@@ -1,9 +1,10 @@
 * {
   font-family: 'Tangerine', serif;
-
 }
 
 body {
+  background: rgb(203,196,23);
+  background: linear-gradient(139deg, rgba(203,196,23,1) 21%, rgba(91,85,18,1) 51%, rgba(48,45,11,1) 80%, rgba(14,13,1,1) 104%);
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -12,6 +13,27 @@ body {
   align-items: center;
 }
 
+/*
+==================================================================
+Board frame, inner and outer sections
+==================================================================
+*/
+.board {
+  width: 1000px;
+  height: 800px;
+  background-color: #9D2E23;
+  border-radius: 50px;
+  margin: 0 auto;
+  box-shadow: inset -5px -5px 5px 0 lightcoral, inset 7px 4px 8px 4px black, -5px -4px 8px 4px black,  5px 5px 5px 0 lightcoral;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+==================================================================
+Main title at top part of the board
+==================================================================
+*/
 .title {
   align-self: center;
   margin-top: 30px;
@@ -24,30 +46,11 @@ body {
   -webkit-text-fill-color: transparent
 }
 
-
-.knobs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-img {
-  height: 100px;
-  width: 100px;
-  margin: 0 50px;
-}
-
-.board {
-  width: 1000px;
-  height: 800px;
-  background-color: #9D2E23;
-  border-radius: 50px;
-  margin: 0 auto;
-  box-shadow: inset -5px -5px 5px 0 lightcoral, inset 7px 4px 8px 4px black;
-  display: flex;
-  flex-direction: column;
-}
-
+/*
+==================================================================
+Main frame section where are both sketching and options areas
+==================================================================
+*/
 .main-frame {
   width: 800px;
   height: 600px;
@@ -55,15 +58,45 @@ img {
   border-radius: 20px;
   background-color: gray;
   margin: 40px auto 0;
-  box-shadow: inset 7px 4px 10px 8px rgba(0, 0, 0, 0.7), inset -7px -4px 8px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 7px 4px 10px 8px rgba(0, 0, 0, 0.7), inset -7px -4px 8px 4px rgba(0, 0, 0, 0.7),  4px 4px 10px 8px rgba(0, 0, 0, 0.7),  -4px -4px 8px 4px rgba(0, 0, 0, 0.7);
 }
 
 .options-area {
   width: 40%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.option-buttons {
+.color-pallete {
+  margin: 15px;
+}
+
+/*Section transforming color picker pallete into rectangle shape*/
+input[type=color] {
+  width: 200px;
+  height: 100px; 
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 1px 1px black, inset -2px -2px 1px 1px black,  2px 2px 1px 1px black,  -2px -2px 1px 1px black;
+  border: none;
+}
+
+input[type=color]::-webkit-color-swatch {
+  border: none;
+  padding: 0;
+  box-shadow: inset 2px 2px 1px 1px black, inset -2px -2px 1px 1px black;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+  border: none;
+  padding: 0;
+}
+
+.option-area-buttons {
+  flex: 1 1 0;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -71,23 +104,10 @@ img {
   justify-content: center;
 }
 
-.sketch-area {
-  width: 55%;
-  height: 98%;
-  margin: 0 auto;
-  border: 6px double black;
-  display: grid;
-  border-radius: 20px;
-}
-
-.hover-square {
-  background: black;
-  transition: background 0.2s ease-in-out;
-}
-
+/*Option buttons handling section of Options area*/
 button {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   font-weight: 700;
   border: 2px solid black;
   border-radius: 50%;
@@ -96,11 +116,6 @@ button {
   background: rgb(203,134,23);
   background: linear-gradient(90deg, rgba(203,134,23,1) 33%, rgba(59,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
   box-shadow: 2px 2px 2px 2px black;
-}
-
-p {
-  color:  white;
-  font-weight: 600;
 }
 
 button.active {
@@ -113,30 +128,74 @@ button.active {
   box-shadow: inset 2px 2px 2px 2px black;
 }
 
-input[type=color] {
+p {
+  color:  whitesmoke;
+  font-weight: 900;
+}
+
+.sketch-area {
+  width: 55%;
+  height: 98%;
+  margin: 0 auto;
+  border: 6px double black;
+  display: grid;
+  border-radius: 20px;
+}
+
+/*
+==================================================================
+Footer section
+==================================================================
+*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Knobs images*/
+img {
+  height: 100px;
   width: 100px;
-  height: 100px; 
-  border-radius: 50%;
-  box-shadow: inset 2px 2px 1px 1px black, inset -2px -2px 1px 1px black;
-
+  margin: 0 50px;
 }
 
-input[type=color]::-webkit-color-swatch {
-  border: none;
-  border-radius: 50%;
-  padding: 0;
-  box-shadow: inset 2px 2px 1px 1px black, inset -2px -2px 1px 1px black;
+/*Section modifying grid size text and value*/
+label {
+  margin: 10px;
+  font-size: 40px;
+  font-weight: 900;
+  background: rgb(197,203,23);
+  background-image: radial-gradient(circle, rgba(197,203,23,1) 33%, rgba(65,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
 }
 
-input[type=color]::-webkit-color-swatch-wrapper {
-  border: none;
-  border-radius: 50%;
-  padding: 0;
+#grid-size {
+  font-size: 40px;
+  margin: 10px;
+  background: rgb(197,203,23);
+  background-image: radial-gradient(circle, rgba(197,203,23,1) 33%, rgba(65,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.color-pallete {
-  margin-top: auto;
-  margin-right: 50px;
-  float: right;
+/*Section that changes behaviour and style of the range bar*/
+input[type='range'] {
+  overflow: hidden;
+  width: 80px;
+  -webkit-appearance: none;
+  background-color: black;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: ew-resize;
+  background: yellow;
+  box-shadow: -80px 0 0 80px orange;
 }
 
