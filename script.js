@@ -58,7 +58,7 @@ function color(e) {
   } else if(activeButton === 'random') {
     e.target.style.background = randomColor();
   } else if(activeButton === 'eraser'){
-    e.target.style.background = 'white';
+    e.target.style.background = 'gray';
   }
 }
 
