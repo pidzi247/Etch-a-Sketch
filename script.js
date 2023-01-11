@@ -104,8 +104,3 @@ reset.onclick = () => { container.innerHTML = ''; changeButton('reset'); createG
 
 
 window.onload = createGrid(defaultSize);
-
-
-
-
-

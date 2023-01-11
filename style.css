@@ -42,6 +42,7 @@ Main title at top part of the board
   background: rgb(197,203,23);
   background-image: radial-gradient(circle, rgba(197,203,23,1) 33%, rgba(65,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
 }
@@ -168,6 +169,7 @@ label {
   background: rgb(197,203,23);
   background-image: radial-gradient(circle, rgba(197,203,23,1) 33%, rgba(65,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
 }
@@ -178,6 +180,7 @@ label {
   background: rgb(197,203,23);
   background-image: radial-gradient(circle, rgba(197,203,23,1) 33%, rgba(65,67,18,1) 82%, rgba(30,31,17,1) 95%, rgba(0,0,0,1) 100%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -186,12 +189,14 @@ label {
 input[type='range'] {
   overflow: hidden;
   width: 80px;
+  appearance: none;
   -webkit-appearance: none;
   background-color: black;
 }
 
 input[type='range']::-webkit-slider-thumb {
   width: 10px;
+  appearance: none;
   -webkit-appearance: none;
   height: 10px;
   cursor: ew-resize;
