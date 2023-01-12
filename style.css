@@ -19,8 +19,8 @@ Board frame, inner and outer sections
 ==================================================================
 */
 .board {
-  width: 1000px;
-  height: 800px;
+  width: 90%;
+  height: 90%;
   background-color: #9D2E23;
   border-radius: 50px;
   margin: 0 auto;
@@ -53,8 +53,8 @@ Main frame section where are both sketching and options areas
 ==================================================================
 */
 .main-frame {
-  width: 800px;
-  height: 600px;
+  width: 80%;
+  height: 80%;
   display: flex;
   border-radius: 20px;
   background-color: gray;
