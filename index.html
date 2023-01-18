@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-  <script src="script.js" defer></script>
-  <title>Etch-a-Sketch</title>
-</head>
-<body>
-  
-  <div class="board">
-    <div class="title">Etch & Sketch by Pidzi</div>
-    <div class="main-frame">
-      <div class="options-area">
-        <input type="color" class="color-pallete" id="color-wheel" value="#000000">
-        <div class="option-area-buttons">
-          <div class="button-wrap">
-            <button id="color-pallete"></button>
-            <p>COLOR</p>
-          </div>
-          <div class="button-wrap">
-            <button id="random"></button>
-            <p>RANDOM</p>
-          </div>
-          <div class="button-wrap">
-            <button id="eraser"></button>
-            <p>ERASER</p>
-          </div>
-          <div class="button-wrap">
-            <button id="reset"></button>
-            <p>CLEAR</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
+    <script src="script.js" defer></script>
+    <title>Etch-a-Sketch</title>
+  </head>
+  <body>
+    <div class="gameBoard">
+      <div class="title">Etch & Sketch by Pidzi</div>
+      <div class="mainFrame">
+        <div class="optionsArea">
+          <input
+            type="color"
+            class="colorPallete"
+            id="colorWheel"
+            value="#000000"
+          />
+          <div class="optionAreaButtons">
+            <div class="buttonWrap">
+              <button id="colorPallete"></button>
+              <p>COLOR</p>
+            </div>
+            <div class="buttonWrap">
+              <button id="random"></button>
+              <p>RANDOM</p>
+            </div>
+            <div class="buttonWrap">
+              <button id="eraser"></button>
+              <p>ERASER</p>
+            </div>
+            <div class="buttonWrap">
+              <button id="reset"></button>
+              <p>CLEAR</p>
+            </div>
           </div>
         </div>
+        <div id="sketchArea"></div>
       </div>
-      <div class="sketch-area"></div>
-    </div>
-    <div class="footer">
-      <img src="./images/button.png" alt="black knob image">
-      <div class="slide-container">
-        <label for="myRange">Grid Size</label>
-        <input type="range" min="16" max="100" value="16" id="myRange" class="slider" oninput="this.nextElementSibling.value = this.value">
-        <output id="grid-size">16</output>
+      <div class="footer">
+        <img src="./images/button.png" alt="black knob image" />
+        <div class="slideContainer">
+          <label for="myRange">Grid Size</label>
+          <input
+            type="range"
+            min="16"
+            max="100"
+            value="16"
+            id="myRange"
+            class="slider"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output id="gridSize">16</output>
+        </div>
+        <img src="./images/button.png" alt="black knob image" />
       </div>
-      <img src="./images/button.png" alt="black knob image">
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
